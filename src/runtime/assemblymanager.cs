@@ -354,7 +354,7 @@ namespace Python.Runtime
             for (int i = 0; i < types.Length; i++)
             {
                 Type t = types[i];
-                string ns = t.Namespace ?? "";
+                string ns = t.Namespace ?? "_MainModule";
                 if (!namespaces.ContainsKey(ns))
                 {
                     string[] names = ns.Split('.');
@@ -441,7 +441,7 @@ namespace Python.Runtime
                     for (int i = 0; i < types.Length; i++)
                     {
                         Type t = types[i];
-                        if ((t.Namespace ?? "") == nsname)
+                        if ((t.Namespace ?? "_MainModule") == nsname)
                         {
                             names.Add(t.Name);
                         }

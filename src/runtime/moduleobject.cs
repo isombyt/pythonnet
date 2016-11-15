@@ -27,7 +27,7 @@ namespace Python.Runtime
             }
             moduleName = name;
             cache = new Dictionary<string, ManagedType>();
-            _namespace = name;
+            _namespace = name == "_MainModule" ? "" : name;
 
             // Use the filename from any of the assemblies just so there's something for
             // anything that expects __file__ to be set.
